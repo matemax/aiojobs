@@ -99,8 +99,6 @@ class Scheduler(*bases):
         if not self._failed_task.done() and self._task.cancelled():
             self._failed_tasks.put_nowait(None)
             await self._failed_task
-        else:
-            pass
 
     def call_exception_handler(self, context):
         handler = self._exception_handler
